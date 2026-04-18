@@ -35,9 +35,16 @@ public:
   bool isInitialized() const;
 
 private:
+  /// @brief Filter time constant in seconds.
   double tau_;
+
+  /// @brief Whether the filter currently has a valid filtered pose.
   bool initialized_;
+
+  /// @brief Current filtered translation component.
   Eigen::Vector3d filtered_position_;
+
+  /// @brief Current filtered rotation component.
   Eigen::Quaterniond filtered_quaternion_;
 };
 

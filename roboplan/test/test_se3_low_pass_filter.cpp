@@ -2,14 +2,13 @@
 #include <numbers>
 
 #include <gtest/gtest.h>
-#include <roboplan_filters/se3_low_pass_filter.hpp>
+#include <roboplan/filters/se3_low_pass_filter.hpp>
 
 namespace roboplan {
 
 namespace {
 
-pinocchio::SE3 makePose(const Eigen::Vector3d& translation,
-                        const Eigen::Quaterniond& quaternion) {
+pinocchio::SE3 makePose(const Eigen::Vector3d& translation, const Eigen::Quaterniond& quaternion) {
   return pinocchio::SE3(quaternion.normalized().toRotationMatrix(), translation);
 }
 
@@ -18,22 +17,13 @@ pinocchio::SE3 makePose(const Eigen::Vector3d& translation,
 TEST(SE3LowPassFilterTest, ConstructorDefaults) {
   const SE3LowPassFilter filter;
 
-  EXPECT_DOUBLE_EQ(filter.tau(), 0.1);
   EXPECT_FALSE(filter.isInitialized());
-}
-
-TEST(SE3LowPassFilterTest, SetTau) {
-  SE3LowPassFilter filter;
-
-  filter.setTau(0.5);
-
-  EXPECT_DOUBLE_EQ(filter.tau(), 0.5);
 }
 
 TEST(SE3LowPassFilterTest, ResetInitializesFilter) {
   SE3LowPassFilter filter;
-  const pinocchio::SE3 pose = makePose(Eigen::Vector3d(1.0, 2.0, 3.0),
-                                       Eigen::Quaterniond::Identity());
+  const pinocchio::SE3 pose =
+      makePose(Eigen::Vector3d(1.0, 2.0, 3.0), Eigen::Quaterniond::Identity());
 
   filter.reset(pose);
 

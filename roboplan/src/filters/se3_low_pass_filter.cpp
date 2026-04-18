@@ -1,6 +1,6 @@
 #include <cmath>
 
-#include <roboplan_filters/se3_low_pass_filter.hpp>
+#include <roboplan/filters/se3_low_pass_filter.hpp>
 
 namespace roboplan {
 

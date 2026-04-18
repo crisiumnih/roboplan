@@ -33,7 +33,6 @@ build_project roboplan_example_models
 build_project roboplan
 build_project roboplan_simple_ik
 build_project roboplan_oink
-build_project roboplan_filters
 build_project roboplan_toppra
 build_project roboplan_rrt
 build_project roboplan_examples

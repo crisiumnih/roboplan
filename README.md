@@ -16,7 +16,6 @@ The main folders found in this repo are as follows.
 - `roboplan` : The core C++ library.
 - `roboplan_simple_ik` : A simple inverse kinematics (IK) solver.
 - `roboplan_oink` : A task-based Optimal Inverse Kinematics (OInK) solver.
-- `roboplan_filters` : Filters for reference commands and motion-planning utilities.
 - `roboplan_rrt` : A Rapidly-exploring Random Tree (RRT) based motion planner.
 - `roboplan_toppra` : A wrapper around the TOPP-RA algorithm for trajectory timing.
 - `roboplan_example_models` : Contains robot models used for testing and examples.
