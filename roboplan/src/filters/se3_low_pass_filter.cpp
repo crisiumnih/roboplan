@@ -35,7 +35,6 @@ pinocchio::SE3 SE3LowPassFilter::update(const pinocchio::SE3& target_pose, doubl
 
   filtered_position_ = filtered_position_ + alpha * (target_position - filtered_position_);
   filtered_quaternion_ = filtered_quaternion_.slerp(alpha, target_quaternion);
-  filtered_quaternion_.normalize();
 
   return pinocchio::SE3(filtered_quaternion_.toRotationMatrix(), filtered_position_);
 }
